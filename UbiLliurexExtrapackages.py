@@ -21,11 +21,12 @@ class PageKde(plugin.PluginUI):
 
         import yaml
 
-        config = yaml.load(open('/etc/lliurexinstaller/extrapackages.yaml')) if os.path.exists('/etc/lliurexinstaller/extrapackages.yaml') else []
+        config = yaml.load(open('/etc/lliurexinstaller/extrapackages.yaml')) if os.path.exists('/etc/lliurexinstaller/extrapackages.yaml') else {'packages':[]}
 
         from PyQt5.QtGui import QPixmap, QIcon, QFont
         from PyQt5.QtWidgets import QWidget, QFrame, QVBoxLayout, QScrollArea, QGridLayout, QHBoxLayout, QLabel, QSizePolicy, QRadioButton
         from PyQt5.QtCore import Qt
+        self.packages_install = []
         self.controller = controller
         self.main_widget = QFrame()
         self.main_widget.setLayout(QVBoxLayout())
@@ -51,10 +52,11 @@ class PageKde(plugin.PluginUI):
 
         count = 0
         for app in config['packages']:
+            appConfig = config['packages'][app]
             last = False
             if count+1 == len(config['packages']):
                 last = True
-            widget.layout().addLayout(self.newPackageUI(app), last)
+            widget.layout().addLayout(self.newPackageUI(appConfig), last)
             count+=1
 
         self.page = widget
@@ -113,7 +115,7 @@ class PageKde(plugin.PluginUI):
         return label_2
 
     def createCheckInstallPackage(self,config):
-         from PyQt5.QtWidgets import QCheckBox, QSizePolicy
+        from PyQt5.QtWidgets import QCheckBox, QSizePolicy
         checkBox = QCheckBox()
         sizePolicy = QSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed)
         sizePolicy.setHorizontalStretch(0)
@@ -169,21 +171,14 @@ class PageKde(plugin.PluginUI):
     
     def modify_package(self, package_name, checkbox):
         if checkbox.isChecked():
-            self.install_package(package_name)
+            self.packages_install.append(package_name)
         else:
-            self.remove_install_package(package_name)
+            self.packages_install.remove(package_name)
 
-    def modify_value(self, layout):
-        with open('/tmp/ubilliurexlayout','w') as fd:
-            fd.write(layout)
-
-
-class Install(plugin.InstallPlugin):
-    
-    def install(self, target, progress, *args, **kwargs):
-        layout = 'default'
-        with open('/tmp/ubilliurexlayout') as fd:
-            layout = fd.readline().strip()
-        os.system('chroot {target} /usr/bin/llx-desktop-layout set {layout}'.format(target=target,layout=layout))
-
-        return plugin.InstallPlugin.install(self, target, progress, *args, **kwargs)
+class Page(plugin.Plugin):
+    def ok_handler(self):
+        os.system("mkdir -p /run/user/999/ubiquity")
+        with open('/run/user/999/ubiquity/lliurex-extra-packages','w') as fd:
+            for package in self.ui.packages_install:
+                fd.write('{package}\n'.format(package=package))
+        plugin.Plugin.ok_handler(self)
