@@ -175,10 +175,11 @@ class PageKde(plugin.PluginUI):
         else:
             self.packages_install.remove(package_name)
 
-class Page(plugin.Plugin):
-    def ok_handler(self):
-        os.system("mkdir -p /run/user/999/ubiquity")
-        with open('/run/user/999/ubiquity/lliurex-extra-packages','w') as fd:
-            for package in self.ui.packages_install:
-                fd.write('{package}\n'.format(package=package))
-        plugin.Plugin.ok_handler(self)
+#class Page(plugin.Plugin):
+#    def ok_handler(self):
+#        os.system("mkdir -p /run/user/999/ubiquity")
+#        with open('/run/user/999/ubiquity/lliurex-extra-packages','w') as fd:
+#            for package in self.ui.packages_install:
+#                fd.write('{package}\n'.format(package=package))
+#        plugin.Plugin.ok_handler(self)
+
