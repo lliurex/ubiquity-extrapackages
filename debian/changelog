@@ -1,3 +1,9 @@
+ubiquity-extrapackages (0.2) bionic; urgency=medium
+
+  * Add packages to install
+
+ -- Raul Rodrigo Segura <raurodse@gmail.com>  Tue, 02 Jul 2019 15:05:09 +0200
+
 ubiquity-extrapackages (0.1) bionic; urgency=medium
 
   * Initial Release.

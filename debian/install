@@ -1,1 +1,2 @@
 UbiLliurexExtrapackages.py /usr/lib/ubiquity/plugins/
+extrapackages.yaml	/etc/lliurexinstaller/
