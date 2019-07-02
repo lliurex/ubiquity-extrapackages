@@ -1,0 +1,57 @@
+---
+packages:
+    ocrfeeder:
+        name: OCRFeeder
+        description: Document layout analysis and optical character recognition system
+        image: pcrfeeder
+        checked: false
+        package: ocrfeeder
+    
+    posterazor:
+        name: Posterazor
+        description: Splits an image across multiple pages for assembly into a poster
+        image: posterazor
+        checked: false
+        package: ocrfeeder
+
+    mrpdi:
+        name: Mr.PDI
+        description: Allows digital whiteboards to work under Gnu/Linux
+        image: mrpdi
+        checked: false
+        package: mrpdi-gui
+
+    openboard:
+        name: OpenBOard 64 Bits
+        description: 
+        image: openboard
+        checked: false
+        package: openboard
+
+    s4a:
+        name: Scratch 4 Arduino
+        description: Allows for simple programming of the Arduino open source hardware platform
+        image: s4a
+        checked: false
+        package: s4a
+
+    arduinoide:
+        name: Arduino IDE
+        description: Makes it easy to write code and upload it to the Arduino board
+        image: arduino
+        checked: false
+        package: arduino-ide
+
+    appinventor:
+        name: App Inventor
+        description: 
+        image: appinventor
+        checked: false
+        package: appinventor2-setup
+
+    openscad:
+        name: Open SCAD
+        description: Script file based graphical CAD environment
+        image: openscad
+        checked: false
+        package: openscad
