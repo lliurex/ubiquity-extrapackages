@@ -15,7 +15,7 @@ gettext.textdomain('ubilliurexextrapackages')
 _ = gettext.gettext
 
 class PageKde(plugin.PluginUI):
-    plugin_title = 'lliurex/extrapackages'
+    plugin_breadcrumb = 'lliurex/breadcrumb_extrapackages'
 
     def __init__(self, controller, *args, **kwargs):
 
