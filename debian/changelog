@@ -1,3 +1,9 @@
+ubiquity-extrapackages (0.4.1) bionic; urgency=medium
+
+  * Add translations
+
+ -- Raul Rodrigo Segura <raurodse@gmail.com>  Wed, 10 Jul 2019 12:28:59 +0200
+
 ubiquity-extrapackages (0.4) bionic; urgency=medium
 
   * Add permission
