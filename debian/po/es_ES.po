@@ -1,0 +1,24 @@
+# Catalan translations for ubiquity-extrapackages package
+# Traduccions al català del paquet «ubiquity-extrapackages».
+# Copyright (C) 2019 THE ubiquity-extrapackages'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the ubiquity-extrapackages package.
+# kbut <kbut@freddy>, 2019.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: ubiquity-extrapackages\n"
+"Report-Msgid-Bugs-To: ubiquity-extrapackages@packages.debian.org\n"
+"POT-Creation-Date: 2019-07-10 12:27+0200\n"
+"PO-Revision-Date: 2019-07-10 12:28+0200\n"
+"Last-Translator: kbut <kbut@freddy>\n"
+"Language-Team: Catalan\n"
+"Language: ca_ES@valencia\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. Type: text
+#. Description
+#: ../ubiquity-extrapackages.templates:1001
+msgid "Extra packages"
+msgstr "Paquetes extra"
