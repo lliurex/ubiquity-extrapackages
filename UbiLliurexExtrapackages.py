@@ -61,7 +61,7 @@ class PageKde(plugin.PluginUI):
             widget.layout().addLayout(self.newPackageUI(appConfig), last)
             count+=1
 
-        self.page = widget
+        self.page = qsa
         self.plugin_widgets = self.page
 
 
