@@ -45,7 +45,7 @@ packages:
     appinventor:
         name: App Inventor
         description: 
-        image: appinventor
+        image: app-inventor
         checked: false
         package: appinventor2-setup
 
